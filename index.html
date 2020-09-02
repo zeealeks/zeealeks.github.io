@@ -1,1 +1,168 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<h1>Let’s start chatting...</h1>
+<br />
+Click the button to start a chat.
+<br /><br /><br />
+
+<style type="text/css">
+
+
+        .slds-form-element__label {
+            display: none;
+        }
+
+        .slds-input {
+            border-left: none;
+            border-top: none;
+            border-right: none;
+            box-shadow: inherit;
+        }
+
+        .slds-input:active,
+        .slds-input:focus {
+            border-color: black;
+            box-shadow : none;
+            outline: none;
+        }
+
+        .chat-btn {
+            width: 100%;
+            background-color: black;
+            color: white;
+            border: none;
+        }
+
+        .image{
+            background-color: #000000;
+            height: 40px;
+            width: 100%;
+        }
+
+        img{
+            height: 100px !important;
+            margin-top: -35px !important;
+        }
+
+        .chat-welcome,
+        .chat-welcome a {
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .links {
+            text-align: center;
+            padding-top: 10px;
+            color: #757575;
+        }
+        .links a {
+            font-size: 11px;
+            color: #757575;
+            text-decoration: none;
+        }
+
+        .phone {
+            font-weight: normal;
+            font-size: 12px;
+            color: #757575;
+            padding-top: 10px !important;
+        }
+
+        .hours {
+            font-size: 12px;
+            color: #757575;
+        }
+
+        .embeddedServiceHelpButton .helpButton .uiButton {
+            background-color: #000000;
+            font-family: "Arial", sans-serif;
+        }
+        .embeddedServiceHelpButton .helpButton .uiButton:focus {
+            outline: 1px solid #000000;
+        }
+    </style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+    let link = document.createElement('link')
+    link.href = "https://converseconsumerservices--polsource2--c.visualforce.com/resource/1598347223000/preChatSLDS?"
+    link.rel= 'stylesheet';
+    document.head.appendChild(link);
+    var initESW = function(gslbBaseURL) {
+        embedded_svc.settings.displayHelpButton = true; //Or false
+        embedded_svc.settings.language = 'en-US'; //For example, enter 'en' or 'en-US'
+
+        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+        embedded_svc.settings.entryFeature = 'LiveAgent';
+
+        embedded_svc.settings.extraPrechatFormDetails =
+            [{label:'First Name',transcriptFields:[ 'Consumer_First_Name__c' ],displayToAgent:true},
+            {label:'Last Name',transcriptFields:[ 'Consumer_Name__c' ],displayToAgent:true},
+            {label:'Email',transcriptFields:[ 'Consumer_Email__c' ],displayToAgent:true}];
+
+        embedded_svc.settings.widgetWidth = '400px';
+
+        embedded_svc.settings.extraPrechatInfo = [{
+            entityName: 'Contact',
+            showOnCreate: true,
+            saveToTranscript: '',
+            entityFieldMaps: [{
+                doCreate:false,
+                doFind:true,
+                fieldName:'FirstName',
+                isExactMatch:true,
+                label:'First Name'
+                }, {
+                doCreate:false,
+                doFind:true,
+                fieldName:'LastName',
+                isExactMatch:true,
+                label:'Last Name'
+                }, {
+                doCreate:false,
+                doFind:true,
+                fieldName:'Email',
+                isExactMatch:true,
+                label:'Email'
+            }],
+        }];
+
+        embedded_svc.init(
+            'https://converseconsumerservices--polsource2.my.salesforce.com',
+            'https://polsource2-conversehelp.cs45.force.com',
+            gslbBaseURL,
+            '00D8A0000005TV8',
+            'LiveAgentES',
+            {
+                baseLiveAgentContentURL: 'https://c.la2-c1cs-ph2.salesforceliveagent.com/content',
+                deploymentId: '5721N000000g6em',
+                buttonId: '5738A0000004Vdk',
+                baseLiveAgentURL: 'https://d.la2-c1cs-ph2.salesforceliveagent.com/chat',
+                eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I8A000000CaoGUAS_173a0c6619a',
+                isOfflineSupportEnabled: false
+            }
+        );
+    };
+
+    if (!window.embedded_svc) {
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://converseconsumerservices--polsource2.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.onload = function() {
+            initESW(null);
+        };
+        document.body.appendChild(s);
+    } else {
+        initESW('https://service.force.com');
+    }
+    </script>
+
+</body>
+</html>
