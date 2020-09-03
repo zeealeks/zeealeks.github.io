@@ -8,7 +8,7 @@
 
 
 
-<h1>Let’s start chatting...</h1>
+<h1>Let’s start chatting..</h1>
 <br />
 Click the button to start a chat.
 <br /><br /><br />
@@ -21,7 +21,7 @@ Click the button to start a chat.
         .embeddedServiceHelpButton .helpButton .uiButton:focus {
             outline: 1px solid #000000;
         }
-        .embeddedServiceLiveAgentStateChatItem .isLightningOutContext .avatar .iconAvatar
+        .embeddedServiceLiveAgentStateChatAvatar.isLightningOutContext .agentIconColor0
             background-color: black !important;
         }
 
@@ -29,11 +29,15 @@ Click the button to start a chat.
             background-color: black !important;
         }
 
-        .embeddedServiceSidebarButton .uiButton--inverse .label {
+        .embeddedServiceSidebarButton:focus, .embeddedServiceSidebarButton:active {
+            background-color: black !important;
+        }
+
+        .embeddedServiceSidebarButton.uiButton--inverse .label {
             color: black !important;
         }
 
-    </style>
+</style>
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
