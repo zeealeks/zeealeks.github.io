@@ -30,7 +30,7 @@ Click the button to start a chat.
         result = sforce.connection.query("Select Name, Id from User");
         records = result.getArray("records");
     } catch(error) {
-         log(error);
+         console.log(error);
     }
     
     var initESW = function(gslbBaseURL) {
