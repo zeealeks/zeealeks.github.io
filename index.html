@@ -25,14 +25,6 @@ Click the button to start a chat.
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
-{!REQUIRESCRIPT("/soap/ajax/24.0/connection.js")}
-{!REQUIRESCRIPT("/soap/ajax/24.0/apex.js")}
-    try{
-        result = sforce.connection.query("Select Name, Id from User");
-        records = result.getArray("records");
-    } catch(error) {
-         alert(error);
-    }
     
     var initESW = function(gslbBaseURL) {
         embedded_svc.settings.displayHelpButton = true;
