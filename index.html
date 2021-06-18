@@ -28,6 +28,12 @@ Click the button to start a chat.
     
     var initESW = function(gslbBaseURL) {
             console.log('loading snippet');
+        
+        embedded_svc.addEventHandler("onSettingsCallCompleted", function(data) {
+        console.log("onSettingsCallCompleted event was fired. Agent availability status is " + data.isAgentAvailable ? "online": "offline");
+    });
+
+        
         embedded_svc.settings.displayHelpButton = true;
         embedded_svc.settings.language = 'en-US';
 
