@@ -212,7 +212,7 @@ h2[embeddedService-chatHeader_chatHeader] { font-weight: 700; margin: 0 0 0 8px 
             embedded_svc.settings.fallbackRouting = ['5730C0000008QQa','5730C0000008QQf']; //An array of button IDs, user IDs, or userId_buttonId
             
             //embedded_svc.settings.extraPrechatFormDetails = [{"label":"Email", "transcriptFields": ["Email__c"]}, {"value":"PAY", label:"Division", "transcriptFields": ["Division__c"]}];   
-	    embedded_svc.settings.extraPrechatFormDetails = [{"label":"Email", "transcriptFields": ["Email__c"]}, { "value": "PAY", "transcriptFields": ["Division__c"]}];
+	    embedded_svc.settings.extraPrechatFormDetails = [{"label":"Email", "transcriptFields": ["Email__c"]}, { "value": window.location.href, "transcriptFields": ["Chat_Referring_URL__c "]}];
 
             //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
             //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
