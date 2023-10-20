@@ -195,32 +195,32 @@
         embedded_svc.settings.entryFeature = 'LiveAgent';
 
         embedded_svc.init(
-            'https://accessgroup--uat.sandbox.my.salesforce.com',
-			'https://accessgroup--uat.sandbox.my.salesforce-sites.com/SalesChat',
-            gslbBaseURL,
-            '00D7E000000AmQn',
+			'https://accessgroup--fone.sandbox.my.salesforce.com',
+			'https://accessgroup--fone.sandbox.my.salesforce-sites.com/SalesChat',
+			gslbBaseURL,
+			'00D0C0000002a9I',
 			'TAG_com_Sales_Chat',
-            {
-                baseLiveAgentContentURL: 'https://c.la1-c1cs-lo2.salesforceliveagent.com/content',
-                deploymentId: '5728e000000sZJv',
-                buttonId: '5738e0000004FdL',
-                baseLiveAgentURL: 'https://d.la1-c1cs-lo2.salesforceliveagent.com/chat',
-                eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I3G0000004CkjUAE_188f7d19d19',
-                isOfflineSupportEnabled: false
-            }
-        );
-    };
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-lo2.salesforceliveagent.com/content',
+				deploymentId: '5728e000000sZJv',
+				buttonId: '5738e0000004FdL',
+				baseLiveAgentURL: 'https://d.la1-c1cs-lo2.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I3G0000004CkjUAE_188f7d19d19',
+				isOfflineSupportEnabled: false
+			}
+		);
+	};
 
-    if (!window.embedded_svc) {
-        var s = document.createElement('script');
-        s.setAttribute('src', 'https://accessgroup--uat.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-        s.onload = function () {
-            initESW(null);
-        };
-        document.body.appendChild(s);
-    } else {
-        initESW('https://service.force.com');
-    }
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://accessgroup--fone.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
     /*end of Salesforce config*/
 
     /*start of offline redirection functionality*/
